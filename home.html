@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feroxus | Performance Kits</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; background: #111; color: #eee; }
+    .hero {
+      background: url('images/gt3-track.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+    }
+    .hero img { width: 150px; margin-bottom: 1rem; }
+    .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+    .hero p { font-size: 1.25rem; margin-bottom: 1.5rem; }
+    .hero button {
+      background: #f00; color: white;
+      border: none; padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    .hero button:hover { background: #c00; }
+
+    .kits-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background: #222;
+      text-align: center;
+    }
+    .kit-card {
+      background: #111;
+      border: 2px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .kit-card:hover { transform: scale(1.02); }
+    .kit-card img { width: 100%; height: 200px; object-fit: cover; }
+    .kit-card h3 { color: #f00; margin: 1rem 0 0.5rem; }
+    .kit-card a { display: block; color: #0f0; margin-bottom: 1rem; text-decoration: none; font-weight: bold; }
+
+    .why-section {
+      padding: 3rem 2rem;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .why-section h2 { color: #f00; margin-bottom: 1rem; }
+    .why-points { max-width: 700px; }
+    .why-points p { margin: 0.5rem 0; }
+
+    footer {
+      background: #000;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <img src="logo.png" alt="Feroxus Logo" />
+    <h1>Precision. Performance. Feroxus.</h1>
+    <p>Your journey to the podium starts here.</p>
+    <button onclick="location.href='track-kit.html'">Shop Kits</button>
+  </section>
+
+  <section class="kits-section">
+    <div class="kit-card">
+      <img src="images/track-porsche.jpg" alt="Track Kit Porsche" />
+      <h3>Track Day Kit</h3>
+      <a href="track-kit.html">Explore &raquo;</a>
+    </div>
+    <div class="kit-card">
+      <img src="images/rally-wrx.jpg" alt="Rally Kit WRX" />
+      <h3>Rallycross Kit</h3>
+      <a href="rally-kit.html">Explore &raquo;</a>
+    </div>
+    <div class="kit-card">
+      <img src="images/autox-miata.jpg" alt="AutoX Kit Miata" />
+      <h3>AutoX Kit</h3>
+      <a href="autox-kit.html">Explore &raquo;</a>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <h2>Why Choose Feroxus?</h2>
+    <div class="why-points">
+      <p>🔧 Handpicked gear for every level of driver.</p>
+      <p>🧪 Track-tested parts for maximum performance.</p>
+      <p>🚀 Fast shipping. Real support. No nonsense.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Feroxus. Built for speed. All rights reserved.
+  </footer>
+</body>
+</html>
