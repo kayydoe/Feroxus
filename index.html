@@ -2,41 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Feroxus | Performance Kits</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: sans-serif;
       background: #111;
       color: #eee;
     }
 
-    header {
+    /* Nav Styles */
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      background: #000;
-      position: relative;
+      background: rgba(0, 0, 0, 0.5); /* Transparent overlay */
       z-index: 10;
     }
 
-    .logo {
+    .nav-left img {
       height: 50px;
     }
 
-    nav {
+    .nav-right {
       display: flex;
-      align-items: center;
       gap: 1.5rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      position: relative;
-      padding: 0.5rem;
+      align-items: center;
     }
 
     .dropdown {
@@ -46,32 +48,39 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 100%;
+      top: 2.5rem;
       right: 0;
-      background-color: #222;
-      min-width: 160px;
-      z-index: 1;
+      background: #222;
+      border: 1px solid #333;
+      padding: 0.5rem;
+      z-index: 20;
     }
 
     .dropdown-content a {
-      color: white;
-      padding: 0.75rem 1rem;
-      display: block;
+      color: #eee;
       text-decoration: none;
+      display: block;
+      padding: 0.3rem 0.5rem;
     }
 
     .dropdown-content a:hover {
-      background-color: #333;
+      background: #333;
     }
 
     .dropdown:hover .dropdown-content {
       display: block;
     }
 
+    .nav-link {
+      color: #eee;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .hero {
       position: relative;
       background: url('images/gt3-track.jpg') center/cover no-repeat;
-      height: 90vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -79,15 +88,20 @@
       text-align: center;
       color: white;
       padding: 0 1rem;
-      z-index: 1;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero h1,
+    .hero p,
+    .hero button {
+      z-index: 1;
     }
 
     .hero h1 {
@@ -187,52 +201,49 @@
     }
 
     @media (max-width: 768px) {
-      nav {
+      .nav-right {
         flex-direction: column;
         align-items: flex-end;
-        gap: 0.75rem;
+        gap: 0.5rem;
       }
 
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .dropdown-content {
-        right: 0;
-        left: auto;
+      nav {
+        padding: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <img src="images/logo.png" alt="Feroxus Logo" class="logo" />
-    <nav>
-      <a href="index.html">Home</a>
+  <nav>
+    <div class="nav-left">
+      <a href="index.html"><img src="images/logo.png" alt="Feroxus Logo" /></a>
+    </div>
+    <div class="nav-right">
+      <a href="index.html" class="nav-link">Home</a>
+
       <div class="dropdown">
-        <a href="#">Kits</a>
+        <a href="#" class="nav-link">Kits ▾</a>
         <div class="dropdown-content">
-          <a href="track-kit.html">Track Kit</a>
+          <a href="track-kit.html">Track Day Kit</a>
           <a href="autox-kit.html">AutoX Kit</a>
           <a href="rally-kit.html">Rallycross Kit</a>
         </div>
       </div>
+
       <div class="dropdown">
-        <a href="#">Gear</a>
+        <a href="#" class="nav-link">Gear ▾</a>
         <div class="dropdown-content">
-          <a href="#">Helmet</a>
+          <a href="#">Helmets</a>
           <a href="#">Gloves</a>
-          <a href="#">Seats</a>
+          <a href="#">Shoes</a>
           <a href="#">Harnesses</a>
-          <a href="#">Fire Suits</a>
-          <a href="#">Tools</a>
         </div>
       </div>
-      <a href="#">Cart</a>
-    </nav>
-  </header>
+
+      <a href="#" class="nav-link">Cart</a>
+    </div>
+  </nav>
 
   <section class="hero">
     <h1>Precision. Performance. Feroxus.</h1>
