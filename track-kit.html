@@ -2,137 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feroxus Beginner Track Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feroxus | Track Kit</title>
   <style>
-    body { font-family: sans-serif; background: #111; color: #eee; margin: 0; padding: 0; position: relative; }
-    .navbar {
-      background: #000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 2px solid #f00;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: white;
     }
-    .navbar-left, .navbar-right {
-      display: flex;
-      align-items: center;
+
+    nav {
+      background-color: black;
+      padding: 10px 20px;
     }
-    .navbar a {
-      color: #eee;
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      position: relative;
+      margin-right: 20px;
+    }
+
+    nav a {
+      color: white;
       text-decoration: none;
-      margin-left: 2rem;
       font-weight: bold;
-      position: relative;
     }
-    .navbar a:hover {
-      color: #f00;
-    }
-    .dropdown {
-      position: relative;
-    }
-    .dropdown-content {
+
+    nav li ul {
       display: none;
       position: absolute;
       top: 100%;
-      left: 0;
-      background-color: #222;
-      min-width: 160px;
-      z-index: 1;
-      flex-direction: column;
+      right: 0;
+      background-color: black;
+      padding: 10px 0;
+      min-width: 150px;
+      z-index: 999;
     }
-    .dropdown-content a {
-      color: #eee;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
+
+    nav li:hover ul {
       display: block;
-      font-weight: normal;
     }
-    .dropdown-content a:hover {
-      background-color: #f00;
+
+    nav li ul li {
+      padding: 5px 15px;
+      white-space: nowrap;
+    }
+
+    nav li ul li a {
       color: white;
     }
-    .dropdown:hover .dropdown-content {
-      display: flex;
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #222;
     }
-    .cart-icon {
-      margin-left: 2rem;
-      font-size: 1.25rem;
-      color: #eee;
-      cursor: pointer;
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
     }
-    .cart-icon:hover {
-      color: #f00;
+
+    p {
+      font-size: 1.2em;
+      color: #ccc;
     }
-    .container { max-width: 900px; margin: auto; padding: 2rem; }
-    .hero { display: flex; flex-direction: row; gap: 2rem; }
-    .details { flex: 1; }
-    .gallery { flex: 1; display: flex; flex-direction: column; align-items: center; }
-    .gallery img { max-width: 100%; max-height: 300px; object-fit: contain; border: 2px solid #444; border-radius: 8px; }
-    .thumbnails { display: flex; gap: 0.5rem; margin-top: 1rem; }
-    .thumbnails img { width: 60px; height: 60px; object-fit: cover; border: 2px solid #444; border-radius: 4px; cursor: pointer; }
-    h1 { font-size: 2.5rem; color: #f00; }
-    .price { font-size: 1.5rem; color: #0f0; }
-    .kit-items { margin-top: 1rem; padding-left: 1.5rem; }
-    .cta { margin-top: 2rem; }
-    button { background: #f00; color: white; padding: 0.75rem 1.5rem; font-size: 1rem; border: none; border-radius: 0.5rem; cursor: pointer; }
-    button:hover { background: #c00; }
-    .logo { width: 120px; }
   </style>
-  <script>
-    function switchImage(src) {
-      document.getElementById('mainImage').src = src;
-    }
-  </script>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <img src="logo.png" alt="Feroxus Logo" class="logo" />
-    </div>
-    <div class="navbar-right">
-      <a href="index.html">Home</a>
-      <div class="dropdown">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>
         <a href="#">Kits ▾</a>
-        <div class="dropdown-content">
-          <a href="track-kit.html">Track Kit</a>
-          <a href="rally-kit.html">Rally Kit</a>
-          <a href="autox-kit.html">AutoX Kit</a>
-        </div>
-      </div>
-      <a href="contact.html">Contact</a>
-      <span class="cart-icon">🛒</span>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="hero">
-      <div class="details">
-        <h1>Feroxus Beginner Track Kit</h1>
-        <p class="price">$99.00</p>
-        <p>Get on track with confidence. The Feroxus Beginner Kit includes everything a first-timer needs to hit a track day or rallycross event with pro-level prep and style.</p>
-        <ul class="kit-items">
-          <li>Lightweight tow strap (universal fit)</li>
-          <li>Magnetic race number plates (reusable)</li>
-          <li>Entry-grade fire-resistant gloves</li>
-          <li>Feroxus balaclava / helmet bag</li>
-          <li>3x Feroxus die-cut decals</li>
-          <li>"Your First Track Day Checklist" (PDF Guide)</li>
+        <ul>
+          <li><a href="track-kit.html">Track Kit</a></li>
+          <li><a href="autox-kit.html">AutoX Kit</a></li>
+          <li><a href="rally-kit.html">Rallycross Kit</a></li>
         </ul>
-        <div class="cta">
-          <button>Add to Cart</button>
-        </div>
-      </div>
-      <div class="gallery">
-        <img id="mainImage" src="images/tow-strap.jpg" alt="Tow Strap" />
-        <div class="thumbnails">
-          <img src="images/tow-strap.jpg" onclick="switchImage(this.src)" alt="Tow Strap" />
-          <img src="images/race-plates.jpg" onclick="switchImage(this.src)" alt="Race Plates" />
-          <img src="images/gloves.jpg" onclick="switchImage(this.src)" alt="Gloves" />
-          <img src="images/balaclava.jpg" onclick="switchImage(this.src)" alt="Balaclava" />
-          <img src="images/decals.jpg" onclick="switchImage(this.src)" alt="Decals" />
-        </div>
-      </div>
-    </div>
-  </div>
+      </li>
+      <li>
+        <a href="gear.html">Gear ▾</a>
+        <ul>
+          <li><a href="tow-hooks.html">Tow Hooks</a></li>
+          <li><a href="driving-gloves.html">Driving Gloves</a></li>
+          <li><a href="helmet-bag.html">Helmet Bag</a></li>
+          <li><a href="tire-pressure.html">Tire Pressure Gauge</a></li>
+          <li><a href="decals.html">Feroxus Decals</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Track Kit</h1>
+    <p>Everything you need for track days, all in one box. No fluff. Just performance.</p>
+  </header>
+
+  <!-- Add your Track kit product content here -->
+
 </body>
 </html>
