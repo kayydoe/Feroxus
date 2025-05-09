@@ -12,70 +12,79 @@
       color: #eee;
     }
 
+    /* NAVIGATION */
     .nav-container {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: #111;
       padding: 1rem 2rem;
-      position: absolute;
+      background: #000;
+      position: sticky;
       top: 0;
-      width: 100%;
       z-index: 10;
+      justify-content: flex-start;
+      gap: 3rem;
     }
 
-    .nav-logo img {
+    .logo {
       height: 40px;
     }
 
     .nav-links {
       display: flex;
       gap: 1.5rem;
+      margin-left: 2rem;
       align-items: center;
     }
 
-    .nav-item {
+    .nav-links a,
+    .dropdown button {
+      color: white;
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 0.5rem;
       position: relative;
     }
 
+    .nav-links a:hover,
+    .dropdown:hover button {
+      color: #f00;
+    }
+
     .dropdown {
-      position: absolute;
-      top: 100%;
-      background: #222;
+      position: relative;
+    }
+
+    .dropdown-content {
       display: none;
-      flex-direction: column;
-      min-width: 160px;
-      border: 1px solid #333;
+      position: absolute;
+      top: 2.5rem;
+      right: 0;
+      background: #222;
+      border: 1px solid #444;
       z-index: 20;
+      min-width: 150px;
     }
 
-    .nav-item:hover .dropdown {
-      display: flex;
-    }
-
-    .dropdown a {
-      padding: 0.75rem 1rem;
-      color: #eee;
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: white;
       text-decoration: none;
-      white-space: nowrap;
     }
 
-    .dropdown a:hover {
+    .dropdown-content a:hover {
       background: #333;
+      color: #f00;
     }
 
-    .nav-links a {
-      color: #eee;
-      text-decoration: none;
-      font-weight: bold;
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
-    .cart-icon {
-      font-size: 1.25rem;
-      color: #eee;
-      cursor: pointer;
-    }
-
+    /* HERO SECTION */
     .hero {
       position: relative;
       background: url('images/gt3-track.jpg') center/cover no-repeat;
@@ -87,7 +96,6 @@
       text-align: center;
       color: white;
       padding: 0 1rem;
-      z-index: 1;
     }
 
     .hero::before {
@@ -124,6 +132,7 @@
       background: #c00;
     }
 
+    /* KITS SECTION */
     .kits-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -164,6 +173,7 @@
       font-weight: bold;
     }
 
+    /* WHY CHOOSE SECTION */
     .why-section {
       padding: 3rem 2rem;
       background: #111;
@@ -197,30 +207,31 @@
 </head>
 <body>
   <div class="nav-container">
-    <div class="nav-logo">
-      <a href="index.html"><img src="images/logo.png" alt="Feroxus Logo" /></a>
-    </div>
+    <img src="images/logo.png" alt="Feroxus Logo" class="logo" />
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <div class="nav-item">
-        <a href="#">Kits ▾</a>
-        <div class="dropdown">
+
+      <div class="dropdown">
+        <button>Kits ▾</button>
+        <div class="dropdown-content">
           <a href="begtrack.html">Track Day</a>
           <a href="autox.html">AutoX</a>
           <a href="rally.html">Rallycross</a>
         </div>
       </div>
-      <div class="nav-item">
-        <a href="#">Gear ▾</a>
-        <div class="dropdown" style="right: auto; left: 0;">
-          <a href="#">Essentials</a>
-          <a href="#">Tools</a>
-          <a href="#">Safety</a>
-          <a href="#">Aero</a>
-          <a href="#">Custom</a>
+
+      <div class="dropdown">
+        <button>Gear ▾</button>
+        <div class="dropdown-content">
+          <a href="#">Helmets</a>
+          <a href="#">Gloves</a>
+          <a href="#">Shoes</a>
+          <a href="#">Fire Suits</a>
+          <a href="#">Accessories</a>
         </div>
       </div>
-      <a class="cart-icon" href="#">🛒</a>
+
+      <a href="#">Cart</a>
     </div>
   </div>
 
