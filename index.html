@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Feroxus | Performance Kits</title>
   <style>
     body {
@@ -12,79 +12,69 @@
       color: #eee;
     }
 
-    /* NAVIGATION */
-    .nav-container {
+    header {
       display: flex;
+      justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       background: #000;
-      position: sticky;
-      top: 0;
+      position: absolute;
+      width: 100%;
       z-index: 10;
-      justify-content: flex-start;
-      gap: 3rem;
     }
 
     .logo {
       height: 40px;
     }
 
-    .nav-links {
+    nav {
       display: flex;
       gap: 1.5rem;
-      margin-left: 2rem;
-      align-items: center;
     }
 
-    .nav-links a,
-    .dropdown button {
-      color: white;
-      background: none;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      padding: 0.5rem;
+    .nav-item {
       position: relative;
     }
 
-    .nav-links a:hover,
-    .dropdown:hover button {
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem;
+    }
+
+    .nav-link:hover {
       color: #f00;
     }
 
     .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
       display: none;
       position: absolute;
-      top: 2.5rem;
+      top: 100%;
+      left: auto;
       right: 0;
-      background: #222;
-      border: 1px solid #444;
-      z-index: 20;
+      background: #111;
+      border: 1px solid #333;
       min-width: 150px;
+      z-index: 999;
     }
 
-    .dropdown-content a {
+    .dropdown a {
       display: block;
+      color: #eee;
       padding: 0.5rem 1rem;
-      color: white;
       text-decoration: none;
     }
 
-    .dropdown-content a:hover {
-      background: #333;
+    .dropdown a:hover {
+      background: #222;
       color: #f00;
     }
 
-    .dropdown:hover .dropdown-content {
+    .nav-item:hover .dropdown {
       display: block;
     }
 
-    /* HERO SECTION */
     .hero {
       position: relative;
       background: url('images/gt3-track.jpg') center/cover no-repeat;
@@ -132,7 +122,6 @@
       background: #c00;
     }
 
-    /* KITS SECTION */
     .kits-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -173,13 +162,9 @@
       font-weight: bold;
     }
 
-    /* WHY CHOOSE SECTION */
     .why-section {
       padding: 3rem 2rem;
       background: #111;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
     }
 
@@ -190,6 +175,7 @@
 
     .why-points {
       max-width: 700px;
+      margin: 0 auto;
     }
 
     .why-points p {
@@ -206,34 +192,31 @@
   </style>
 </head>
 <body>
-  <div class="nav-container">
+  <header>
     <img src="images/logo.png" alt="Feroxus Logo" class="logo" />
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-
-      <div class="dropdown">
-        <button>Kits ▾</button>
-        <div class="dropdown-content">
-          <a href="begtrack.html">Track Day</a>
-          <a href="autox.html">AutoX</a>
-          <a href="rally.html">Rallycross</a>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Kits</a>
+        <div class="dropdown">
+          <a href="track-kit.html">Track Kit</a>
+          <a href="autox-kit.html">AutoX Kit</a>
+          <a href="rally-kit.html">Rallycross Kit</a>
         </div>
       </div>
-
-      <div class="dropdown">
-        <button>Gear ▾</button>
-        <div class="dropdown-content">
-          <a href="#">Helmets</a>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Gear</a>
+        <div class="dropdown">
+          <a href="#">Helmet</a>
           <a href="#">Gloves</a>
-          <a href="#">Shoes</a>
-          <a href="#">Fire Suits</a>
-          <a href="#">Accessories</a>
+          <a href="#">Seats</a>
+          <a href="#">Harnesses</a>
+          <a href="#">Fire Extinguishers</a>
         </div>
       </div>
-
-      <a href="#">Cart</a>
-    </div>
-  </div>
+      <a href="#" class="nav-link">Cart</a>
+    </nav>
+  </header>
 
   <section class="hero">
     <h1>Precision. Performance. Feroxus.</h1>
@@ -245,17 +228,17 @@
     <div class="kit-card">
       <img src="images/track-porsche.jpg" alt="Track Kit Porsche" />
       <h3>Track Day Kit</h3>
-      <a href="begtrack.html">Explore &raquo;</a>
+      <a href="track-kit.html">Explore &raquo;</a>
     </div>
     <div class="kit-card">
       <img src="images/rally-wrx.jpg" alt="Rally Kit WRX" />
       <h3>Rallycross Kit</h3>
-      <a href="rally.html">Explore &raquo;</a>
+      <a href="rally-kit.html">Explore &raquo;</a>
     </div>
     <div class="kit-card">
       <img src="images/autox-miata.jpg" alt="AutoX Kit Miata" />
       <h3>AutoX Kit</h3>
-      <a href="autox.html">Explore &raquo;</a>
+      <a href="autox-kit.html">Explore &raquo;</a>
     </div>
   </section>
 
