@@ -3,110 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Feroxus | Rallycross Kit</title>
+  <title>Rallycross Kit | Feroxus</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: white;
+      font-family: sans-serif;
+      background: #111;
+      color: #eee;
     }
 
-    nav {
-      background-color: black;
-      padding: 10px 20px;
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: transparent;
+    }
+
+    header img {
+      height: 50px;
     }
 
     nav ul {
       list-style: none;
+      display: flex;
+      gap: 1.5rem;
       margin: 0;
       padding: 0;
-      display: flex;
+      align-items: center;
     }
 
-    nav li {
+    nav ul li {
       position: relative;
-      margin-right: 20px;
     }
 
-    nav a {
+    nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 0.5rem;
     }
 
-    nav li ul {
-      display: none;
+    nav ul li ul {
       position: absolute;
       top: 100%;
-      right: 0;
-      background-color: black;
-      padding: 10px 0;
-      min-width: 150px;
-      z-index: 999;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: none;
+      min-width: 180px;
+      flex-direction: column;
     }
 
-    nav li:hover ul {
+    nav ul li:hover > ul {
       display: block;
     }
 
-    nav li ul li {
-      padding: 5px 15px;
+    nav ul li ul li {
+      padding: 0.75rem 1rem;
       white-space: nowrap;
     }
 
-    nav li ul li a {
+    nav ul li ul li a {
+      color: #eee;
+    }
+
+    nav ul li ul li:hover {
+      background-color: #333;
+    }
+
+    .hero {
+      position: relative;
+      background: url('images/rallyhero.jpg') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       color: white;
     }
 
-    header {
-      padding: 60px 20px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      text-shadow: 0 2px 4px black;
+    }
+
+    .kit-description {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
       text-align: center;
-      background-color: #222;
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+    .kit-sale {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
     }
 
-    p {
-      font-size: 1.2em;
-      color: #ccc;
+    .kit-sale h2 {
+      color: #f00;
+      margin-bottom: 1rem;
+    }
+
+    .kit-sale p {
+      margin-bottom: 1.5rem;
+    }
+
+    .kit-sale img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .kit-sale button {
+      background: #f00;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    .kit-sale button:hover {
+      background: #c00;
+    }
+
+    footer {
+      background: #000;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+        padding: 0 1rem;
+      }
+
+      .kit-sale img {
+        max-height: 250px;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="#">Kits ▾</a>
-        <ul>
-          <li><a href="track-kit.html">Track Kit</a></li>
-          <li><a href="autox-kit.html">AutoX Kit</a></li>
-          <li><a href="rally-kit.html">Rallycross Kit</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="gear.html">Gear ▾</a>
-        <ul>
-          <li><a href="tow-hooks.html">Tow Hooks</a></li>
-          <li><a href="driving-gloves.html">Driving Gloves</a></li>
-          <li><a href="helmet-bag.html">Helmet Bag</a></li>
-          <li><a href="tire-pressure.html">Tire Pressure Gauge</a></li>
-          <li><a href="decals.html">Feroxus Decals</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
 
   <header>
-    <h1>Rallycross Kit</h1>
-    <p>Dialed for dirt. Everything you need to hit the rallycross course with confidence.</p>
+    <a href="index.html"><img src="images/logo.png" alt="Feroxus Logo"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">Kits</a>
+          <ul>
+            <li><a href="track-kit.html">Track</a></li>
+            <li><a href="autox-kit.html">AutoX</a></li>
+            <li><a href="rally-kit.html">Rallycross</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Gear</a>
+          <ul>
+            <li><a href="#">Helmet</a></li>
+            <li><a href="#">Gloves</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Fire Suit</a></li>
+            <li><a href="#">Tow Hook</a></li>
+            <li><a href="#">Roll Bar</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Add your Rallycross kit product content here -->
+  <section class="hero">
+    <h1>Rallycross Kit</h1>
+  </section>
+
+  <section class="kit-description">
+    <p>
+      Conquer loose surfaces, flying dirt, and fast corners with our purpose-built Rallycross Kit. Designed for durability and safety in the roughest race conditions — built to go sideways and win.
+    </p>
+  </section>
+
+  <section class="kit-sale">
+    <h2>Included in This Kit:</h2>
+    <img src="images/rally-kit-detail.jpg" alt="Rally Kit Gear">
+    <p>
+      • SA2020 helmet with visor<br/>
+      • Rally-specific gloves and suit<br/>
+      • High-grip boots for pedal precision<br/>
+      • Fireproof gear compliant with sanctioning bodies<br/>
+      • Bolt-in tow hook<br/>
+      • Padded roll bar system
+    </p>
+    <button>Add to Cart - $1,199</button>
+  </section>
+
+  <footer>
+    &copy; 2025 Feroxus. Built for speed. All rights reserved.
+  </footer>
 
 </body>
 </html>
