@@ -2,85 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feroxus | Performance Kits</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: sans-serif;
       background: #111;
       color: #eee;
     }
 
-    /* Nav Styles */
-    nav {
+    header {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      padding: 1rem 2rem;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0, 0, 0, 0.5); /* Transparent overlay */
-      z-index: 10;
+      padding: 1rem 2rem;
+      background: transparent;
     }
 
-    .nav-left img {
+    header img {
       height: 50px;
     }
 
-    .nav-right {
+    nav ul {
+      list-style: none;
       display: flex;
       gap: 1.5rem;
+      margin: 0;
+      padding: 0;
       align-items: center;
     }
 
-    .dropdown {
+    nav ul li {
       position: relative;
     }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 2.5rem;
-      right: 0;
-      background: #222;
-      border: 1px solid #333;
-      padding: 0.5rem;
-      z-index: 20;
-    }
-
-    .dropdown-content a {
-      color: #eee;
-      text-decoration: none;
-      display: block;
-      padding: 0.3rem 0.5rem;
-    }
-
-    .dropdown-content a:hover {
-      background: #333;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .nav-link {
-      color: #eee;
+    nav ul li a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 0.5rem;
+    }
+
+    nav ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: none;
+      min-width: 180px;
+      flex-direction: column;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      padding: 0.75rem 1rem;
+      white-space: nowrap;
+    }
+
+    nav ul li ul li a {
+      color: #eee;
+    }
+
+    nav ul li ul li:hover {
+      background-color: #333;
     }
 
     .hero {
       position: relative;
       background: url('images/gt3-track.jpg') center/cover no-repeat;
-      height: 100vh;
+      height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -94,13 +93,12 @@
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       z-index: 0;
     }
 
-    .hero h1,
-    .hero p,
-    .hero button {
+    .hero-content {
+      position: relative;
       z-index: 1;
     }
 
@@ -201,54 +199,60 @@
     }
 
     @media (max-width: 768px) {
-      .nav-right {
+      header {
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
         gap: 0.5rem;
       }
 
-      nav {
-        padding: 1rem;
+      nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .kit-card img {
+        height: 160px;
       }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-left">
-      <a href="index.html"><img src="images/logo.png" alt="Feroxus Logo" /></a>
-    </div>
-    <div class="nav-right">
-      <a href="index.html" class="nav-link">Home</a>
-
-      <div class="dropdown">
-        <a href="#" class="nav-link">Kits ▾</a>
-        <div class="dropdown-content">
-          <a href="track-kit.html">Track Day Kit</a>
-          <a href="autox-kit.html">AutoX Kit</a>
-          <a href="rally-kit.html">Rallycross Kit</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <a href="#" class="nav-link">Gear ▾</a>
-        <div class="dropdown-content">
-          <a href="#">Helmets</a>
-          <a href="#">Gloves</a>
-          <a href="#">Shoes</a>
-          <a href="#">Harnesses</a>
-        </div>
-      </div>
-
-      <a href="#" class="nav-link">Cart</a>
-    </div>
-  </nav>
+  <header>
+    <a href="index.html"><img src="images/logo.png" alt="Feroxus Logo"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">Kits</a>
+          <ul>
+            <li><a href="track-kit.html">Track</a></li>
+            <li><a href="autox-kit.html">AutoX</a></li>
+            <li><a href="rally-kit.html">Rallycross</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Gear</a>
+          <ul>
+            <li><a href="#">Helmet</a></li>
+            <li><a href="#">Gloves</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Fire Suit</a></li>
+            <li><a href="#">Tow Hook</a></li>
+            <li><a href="#">Roll Bar</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <section class="hero">
-    <h1>Precision. Performance. Feroxus.</h1>
-    <p>Your journey to the podium starts here.</p>
-    <button onclick="location.href='track-kit.html'">Shop Kits</button>
+    <div class="hero-content">
+      <h1>Precision. Performance. Feroxus.</h1>
+      <p>Your journey to the podium starts here.</p>
+      <button onclick="location.href='track-kit.html'">Shop Kits</button>
+    </div>
   </section>
 
   <section class="kits-section">
