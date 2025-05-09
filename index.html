@@ -12,10 +12,65 @@
       color: #eee;
     }
 
+    /* Navigation */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #000;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-left img {
+      height: 40px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #222;
+      padding: 0.5rem 0;
+      display: none;
+      min-width: 150px;
+      border: 1px solid #333;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #eee;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    /* Hero */
     .hero {
       position: relative;
       background: url('images/gt3-track.jpg') center/cover no-repeat;
-      height: 90vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -23,7 +78,6 @@
       text-align: center;
       color: white;
       padding: 0 1rem;
-      z-index: 1;
     }
 
     .hero::before {
@@ -31,7 +85,12 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
+      z-index: 0;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
     }
 
     .hero img {
@@ -65,11 +124,12 @@
       background: #c00;
     }
 
+    /* Kits section */
     .kits-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      padding: 3rem 2rem;
+      padding: 5rem 2rem 3rem;
       background: #222;
       text-align: center;
     }
@@ -105,12 +165,10 @@
       font-weight: bold;
     }
 
+    /* Why section */
     .why-section {
       padding: 3rem 2rem;
       background: #111;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
     }
 
@@ -121,6 +179,7 @@
 
     .why-points {
       max-width: 700px;
+      margin: 0 auto;
     }
 
     .why-points p {
@@ -134,11 +193,45 @@
       padding: 2rem;
       font-size: 0.9rem;
     }
+
+    body::before {
+      content: "";
+      display: block;
+      height: 80px;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <div class="nav-left">
+      <a href="index.html"><img src="logo.png" alt="Feroxus Logo"></a>
+    </div>
+    <nav class="nav-right">
+      <a href="index.html">Home</a>
+      <div class="nav-item">
+        <a href="#">Kits ▾</a>
+        <div class="dropdown">
+          <a href="begtrack.html">Track Kit</a>
+          <a href="autox.html">AutoX Kit</a>
+          <a href="rally.html">Rallycross Kit</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#">Gear ▾</a>
+        <div class="dropdown">
+          <a href="gear-helmet.html">Helmets</a>
+          <a href="gear-gloves.html">Gloves</a>
+          <a href="gear-seats.html">Seats</a>
+          <a href="gear-harness.html">Harnesses</a>
+          <a href="gear-shoes.html">Shoes</a>
+          <a href="gear-suits.html">Suits</a>
+        </div>
+      </div>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
   <section class="hero">
-    <img src="logo.png" alt="Feroxus Logo" />
     <h1>Precision. Performance. Feroxus.</h1>
     <p>Your journey to the podium starts here.</p>
     <button onclick="location.href='track-kit.html'">Shop Kits</button>
