@@ -2,125 +2,177 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feroxus | Performance Kits</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 32px;
-    }
-
-    .logo {
-      height: 40px;
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-      position: relative;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 24px;
-      right: 0;
-      background-color: #111;
-      padding: 8px 0;
-      border: 1px solid #333;
-      z-index: 1;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 8px 16px;
-      color: white;
-      text-align: left;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
+      font-family: sans-serif;
+      background: #111;
+      color: #eee;
     }
 
     .hero {
-      margin-top: 60px;
+      position: relative;
+      background: url('images/gt3-track.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
     }
 
     .hero img {
-      max-width: 500px;
-      width: 100%;
-      height: auto;
+      width: 150px;
+      margin-bottom: 1rem;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 20px;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 5px #000;
     }
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 1px 3px #000;
     }
 
-    .btn {
-      background-color: red;
+    .hero button {
+      background: #f00;
       color: white;
-      padding: 12px 24px;
-      font-size: 1rem;
       border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 0.5rem;
       cursor: pointer;
-      border-radius: 4px;
-      text-decoration: none;
     }
 
-    .btn:hover {
-      background-color: #cc0000;
+    .hero button:hover {
+      background: #c00;
+    }
+
+    .kits-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+      background: #222;
+      text-align: center;
+    }
+
+    .kit-card {
+      background: #111;
+      border: 2px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .kit-card:hover {
+      transform: scale(1.02);
+    }
+
+    .kit-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .kit-card h3 {
+      color: #f00;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .kit-card a {
+      display: block;
+      color: #0f0;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .why-section {
+      padding: 3rem 2rem;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .why-section h2 {
+      color: #f00;
+      margin-bottom: 1rem;
+    }
+
+    .why-points {
+      max-width: 700px;
+    }
+
+    .why-points p {
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      background: #000;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="index.html"><img src="images/feroxus-logo.png" alt="Feroxus Logo" class="logo" /></a>
-    <nav>
-      <a href="index.html">Home</a>
-      <div class="dropdown">
-        <a href="#">Kits</a>
-        <div class="dropdown-content">
-          <a href="track.html">Track</a>
-          <a href="autox.html">AutoX</a>
-          <a href="rally.html">Rallycross</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="hero">
-    <img src="images/gt3-track.png" alt="Track GT3 Hero" />
+  <section class="hero">
+    <img src="logo.png" alt="Feroxus Logo" />
     <h1>Precision. Performance. Feroxus.</h1>
     <p>Your journey to the podium starts here.</p>
-    <a class="btn" href="track.html">Shop Kits</a>
-  </div>
+    <button onclick="location.href='track-kit.html'">Shop Kits</button>
+  </section>
+
+  <section class="kits-section">
+    <div class="kit-card">
+      <img src="images/track-porsche.jpg" alt="Track Kit Porsche" />
+      <h3>Track Day Kit</h3>
+      <a href="begtrack.html">Explore &raquo;</a>
+    </div>
+    <div class="kit-card">
+      <img src="images/rally-wrx.jpg" alt="Rally Kit WRX" />
+      <h3>Rallycross Kit</h3>
+      <a href="rally.html">Explore &raquo;</a>
+    </div>
+    <div class="kit-card">
+      <img src="images/autox-miata.jpg" alt="AutoX Kit Miata" />
+      <h3>AutoX Kit</h3>
+      <a href="autox.html">Explore &raquo;</a>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <h2>Why Choose Feroxus?</h2>
+    <div class="why-points">
+      <p>🔧 Handpicked gear for every level of driver.</p>
+      <p>🧪 Track-tested parts for maximum performance.</p>
+      <p>🚀 Fast shipping. Real support. No nonsense.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Feroxus. Built for speed. All rights reserved.
+  </footer>
 </body>
 </html>
