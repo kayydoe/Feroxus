@@ -1,10 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0;url=https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AutoX Kit | Feroxus</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #111;
+      color: #eee;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: transparent;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem;
+    }
+
+    nav ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      display: none;
+      min-width: 180px;
+      flex-direction: column;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      padding: 0.75rem 1rem;
+      white-space: nowrap;
+    }
+
+    nav ul li ul li a {
+      color: #eee;
+    }
+
+    nav ul li ul li:hover {
+      background-color: #333;
+    }
+
+    .hero {
+      position: relative;
+      background: url('images/autoxhero.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 5px #000;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      text-shadow: 0 1px 3px #000;
+    }
+
+    .kit-section {
+      padding: 3rem 2rem;
+      background: #222;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    .kit-section h2 {
+      color: #f00;
+      text-align: center;
+    }
+
+    .kit-section p {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .kit-details {
+      background: #111;
+      padding: 1.5rem;
+      border: 2px solid #333;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #000;
+      color: #888;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <p>Redirecting to AutoX Kit...</p>
+
+  <header>
+    <a href="index.html"><img src="images/logo.png" alt="Feroxus Logo"></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">Kits</a>
+          <ul>
+            <li><a href="track-kit.html">Track</a></li>
+            <li><a href="autox-kit.html">AutoX</a></li>
+            <li><a href="rally-kit.html">Rallycross</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Gear</a>
+          <ul>
+            <li><a href="#">Helmet</a></li>
+            <li><a href="#">Gloves</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Fire Suit</a></li>
+            <li><a href="#">Tow Hook</a></li>
+            <li><a href="#">Roll Bar</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>AutoX Kit</h1>
+      <p>Precision handling. Fast setup. Rule the cones.</p>
+    </div>
+  </section>
+
+  <section class="kit-section">
+    <h2>AutoX Kit Contents</h2>
+    <p>This kit is built for agility, weight savings, and instant responsiveness on tight autocross courses.</p>
+    <div class="kit-details">
+      <ul>
+        <li>Lightweight DOT-approved helmet</li>
+        <li>Driving gloves with high grip</li>
+        <li>Low-profile racing shoes</li>
+        <li>Compact fire extinguisher & mount</li>
+        <li>Adjustable tire pressure gauge</li>
+        <li>Trunk organizer for tools/gear</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Feroxus. Built for speed. All rights reserved.
+  </footer>
+
 </body>
 </html>
